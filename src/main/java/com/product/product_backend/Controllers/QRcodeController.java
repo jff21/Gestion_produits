@@ -20,7 +20,7 @@ public class QRcodeController {
     @GetMapping("/generate")
     public ResponseEntity<byte[]>getQrCode(@RequestBody ProductDTO productDTO){
         String contentToGenerateQrCode="simple solution";
-        byte[] qrCode = qrService.generateQR(contentToGenerateQrCode,WIDTH,HEIGHT);
+        byte[] qrCode = qrService.generateQR(contentToGenerateQrCode,WIDTH,HEIGHT, productDTO.getPro_id());
         return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG).body(qrCode);
     }
 

@@ -5,18 +5,25 @@ import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
-import com.product.product_backend.Entities.QrCode;
+import com.product.product_backend.Entities.Product;
+import com.product.product_backend.Repositories.ProductRepo;
 import com.product.product_backend.Services.QrService;
 import org.springframework.stereotype.Service;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Optional;
 
 @Service
 public class QrServiceImpl implements QrService {
+    private final ProductRepo productRepo;
+
+    public QrServiceImpl(ProductRepo productRepo) {
+        this.productRepo = productRepo;
+    }
+
     @Override
-    public byte[] generateQR(String qrcode, int width, int height) {
+    public byte[] generateQR(String qrcode, int width, int height,Long id) {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix = null;
         try{

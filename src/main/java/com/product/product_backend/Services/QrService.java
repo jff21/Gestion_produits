@@ -1,5 +1,5 @@
 package com.product.product_backend.Services;
 
 public interface QrService {
-    byte[] generateQR(String qrcode,int width,int height);
+    byte[] generateQR(String qrcode,int width,int height,Long id);
 }
