@@ -16,11 +16,7 @@ import java.util.Optional;
 
 @Service
 public class QrServiceImpl implements QrService {
-    private final ProductRepo productRepo;
 
-    public QrServiceImpl(ProductRepo productRepo) {
-        this.productRepo = productRepo;
-    }
 
     @Override
     public byte[] generateQR(String qrcode, int width, int height,Long id) {
