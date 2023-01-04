@@ -1,7 +1,6 @@
 package com.product.product_backend.Controllers;
 
-import com.product.product_backend.Entities.Level;
-import com.product.product_backend.Repositories.LevelRepo;
+import com.product.product_backend.Models.Level;
 import com.product.product_backend.Services.LevelService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,20 +1,21 @@
-package com.product.product_backend.Entities;
+package com.product.product_backend.Models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class QrCode {
+public class Categorie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long code;
-    private String code_url;
-    @OneToOne
-    private Product product;
+    private Long cat_id;
+    private String name;
+    @OneToMany
+    private List<Catproperties>  catproperties;
 }

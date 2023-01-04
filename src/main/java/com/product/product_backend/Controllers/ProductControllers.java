@@ -1,7 +1,7 @@
 package com.product.product_backend.Controllers;
 
 import com.product.product_backend.DTOS.ProductDTO;
-import com.product.product_backend.Entities.Product;
+import com.product.product_backend.Models.Product;
 import com.product.product_backend.Repositories.MediaRepository;
 import com.product.product_backend.Repositories.ProductRepo;
 import com.product.product_backend.Services.ProductService;

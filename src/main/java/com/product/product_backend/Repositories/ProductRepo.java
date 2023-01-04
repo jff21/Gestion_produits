@@ -1,9 +1,8 @@
 package com.product.product_backend.Repositories;
 
-import com.product.product_backend.Entities.Product;
+import com.product.product_backend.Models.Product;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

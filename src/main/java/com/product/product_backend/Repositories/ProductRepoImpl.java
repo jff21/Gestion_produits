@@ -1,7 +1,7 @@
 package com.product.product_backend.Repositories;
 
 import com.product.product_backend.DTOS.SearchContext;
-import com.product.product_backend.Entities.Product;
+import com.product.product_backend.Models.Product;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

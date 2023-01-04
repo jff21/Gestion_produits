@@ -1,7 +1,7 @@
 package com.product.product_backend.Controllers;
 
 import com.product.product_backend.DTOS.CategorieDTO;
-import com.product.product_backend.Entities.Categorie;
+import com.product.product_backend.Models.Categorie;
 import com.product.product_backend.Services.CategorieService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

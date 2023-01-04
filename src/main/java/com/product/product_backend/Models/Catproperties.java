@@ -1,4 +1,4 @@
-package com.product.product_backend.Entities;
+package com.product.product_backend.Models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

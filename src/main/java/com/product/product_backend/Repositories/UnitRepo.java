@@ -1,6 +1,6 @@
 package com.product.product_backend.Repositories;
 
-import com.product.product_backend.Entities.Unit;
+import com.product.product_backend.Models.Unit;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

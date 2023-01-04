@@ -1,8 +1,7 @@
 package com.product.product_backend.Services.Impl;
 
 import com.product.product_backend.DTOS.ProductDTO;
-import com.product.product_backend.DTOS.SearchContext;
-import com.product.product_backend.Entities.*;
+import com.product.product_backend.Models.*;
 import com.product.product_backend.Repositories.*;
 import com.product.product_backend.Services.ProductService;
 import lombok.AllArgsConstructor;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityNotFoundException;
-import javax.persistence.criteria.Root;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;

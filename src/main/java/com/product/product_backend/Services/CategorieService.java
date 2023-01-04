@@ -1,7 +1,7 @@
 package com.product.product_backend.Services;
 
 import com.product.product_backend.DTOS.CategorieDTO;
-import com.product.product_backend.Entities.Categorie;
+import com.product.product_backend.Models.Categorie;
 
 import java.util.List;
 import java.util.Optional;

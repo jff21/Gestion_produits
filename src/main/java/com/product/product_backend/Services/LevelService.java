@@ -1,7 +1,6 @@
 package com.product.product_backend.Services;
 
-import com.product.product_backend.DTOS.LevelDTO;
-import com.product.product_backend.Entities.Level;
+import com.product.product_backend.Models.Level;
 
 import java.util.List;
 import java.util.Optional;

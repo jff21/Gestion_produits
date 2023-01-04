@@ -1,6 +1,6 @@
 package com.product.product_backend.Specification;
 
-import com.product.product_backend.Entities.Product;
+import com.product.product_backend.Models.Product;
 import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.Predicate;
@@ -21,6 +21,4 @@ public class ProductSpecifications {
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
         });
     }
-
-
 }

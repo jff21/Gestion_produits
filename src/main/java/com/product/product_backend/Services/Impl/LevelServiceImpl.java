@@ -1,7 +1,6 @@
 package com.product.product_backend.Services.Impl;
 
-import com.product.product_backend.DTOS.LevelDTO;
-import com.product.product_backend.Entities.Level;
+import com.product.product_backend.Models.Level;
 import com.product.product_backend.Repositories.LevelRepo;
 import com.product.product_backend.Services.LevelService;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.product.product_backend.Entities;
+package com.product.product_backend.Models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,19 +8,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class Productline {
+public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long line_id;
-   // private Date deliveryDate;
-    private int number;
-    private float quantity;
-    private String supplier;
+    private long un_id;
+   // private Date lastUpadte;
+    private String name;
+    private String symbol;
+   // private Date creationDate;
 }

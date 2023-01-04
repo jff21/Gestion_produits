@@ -1,6 +1,6 @@
 package com.product.product_backend.Services.Impl;
 
-import com.product.product_backend.Entities.Productline;
+import com.product.product_backend.Models.Productline;
 import com.product.product_backend.Repositories.ProductLineRepo;
 import com.product.product_backend.Services.ProductUnitService;
 import org.springframework.stereotype.Service;

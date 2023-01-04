@@ -1,8 +1,8 @@
 package com.product.product_backend.Services.Impl;
 
 import com.product.product_backend.DTOS.CategorieDTO;
-import com.product.product_backend.Entities.Categorie;
-import com.product.product_backend.Entities.Catproperties;
+import com.product.product_backend.Models.Categorie;
+import com.product.product_backend.Models.Catproperties;
 import com.product.product_backend.Repositories.CatPropertieRepo;
 import com.product.product_backend.Repositories.CategorieRepo;
 import com.product.product_backend.Services.CategorieService;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Properties;
 
 
 @Service

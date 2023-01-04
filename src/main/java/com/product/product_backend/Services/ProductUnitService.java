@@ -1,7 +1,6 @@
 package com.product.product_backend.Services;
 
-import com.product.product_backend.DTOS.ProductLineDTO;
-import com.product.product_backend.Entities.Productline;
+import com.product.product_backend.Models.Productline;
 
 import java.util.List;
 import java.util.Optional;

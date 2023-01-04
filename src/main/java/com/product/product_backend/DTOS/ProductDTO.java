@@ -1,10 +1,6 @@
 package com.product.product_backend.DTOS;
 
-import com.product.product_backend.Entities.*;
 import lombok.Data;
-
-import javax.persistence.ManyToOne;
-import java.util.Set;
 
 @Data
 public class ProductDTO {

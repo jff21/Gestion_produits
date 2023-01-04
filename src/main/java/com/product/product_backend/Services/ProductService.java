@@ -1,8 +1,7 @@
 package com.product.product_backend.Services;
 
 import com.product.product_backend.DTOS.ProductDTO;
-import com.product.product_backend.DTOS.SearchContext;
-import com.product.product_backend.Entities.Product;
+import com.product.product_backend.Models.Product;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
