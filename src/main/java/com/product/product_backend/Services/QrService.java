@@ -1,5 +1,7 @@
 package com.product.product_backend.Services;
 
+import com.product.product_backend.DTOS.ProductDTO;
+
 public interface QrService {
-    byte[] generateQR(String qrcode,int width,int height,Long id);
+    byte[] generateQR(ProductDTO qrcode, int width, int height);
 }

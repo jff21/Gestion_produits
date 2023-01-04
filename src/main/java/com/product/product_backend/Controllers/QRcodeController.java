@@ -17,10 +17,10 @@ public class QRcodeController {
     private static final int HEIGHT =500 ;
     private final QrService qrService;
 
-    @GetMapping("/generate")
+    @GetMapping("/generate/{id}")
     public ResponseEntity<byte[]>getQrCode(@RequestBody ProductDTO productDTO){
-        String contentToGenerateQrCode="simple solution";
-        byte[] qrCode = qrService.generateQR(contentToGenerateQrCode,WIDTH,HEIGHT, productDTO.getPro_id());
+        ProductDTO contentToGenerateQrCode=productDTO;
+        byte[] qrCode = qrService.generateQR(productDTO,WIDTH,HEIGHT);
         return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG).body(qrCode);
     }
 
