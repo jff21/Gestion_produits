@@ -1,8 +1,7 @@
 package com.product.product_backend.Services.Impl;
 
 import com.product.product_backend.DTOS.CategorieDTO;
-import com.product.product_backend.Models.Categorie;
-import com.product.product_backend.Models.Catproperties;
+import com.product.product_backend.Models.Category;
 import com.product.product_backend.Repositories.CatPropertieRepo;
 import com.product.product_backend.Repositories.CategorieRepo;
 import com.product.product_backend.Services.CategorieService;
@@ -21,33 +20,34 @@ public class CategorieServiceImpl implements CategorieService {
     private final CatPropertieRepo catPropertieRepo;
 
     @Override
-    public Categorie createCat(CategorieDTO categorieDTO) {
-        Categorie categorie= new Categorie();
+    public Category createCat(CategorieDTO categorieDTO) {
+        Category categorie= new Category();
         categorie.setName(categorieDTO.getName());
-//        categorie.setCreationDate(categorieDTO.getCreationDate());
-//        categorie.setLastUpdate(categorieDTO.getLastUpdate());
-        List<Catproperties> properties = catPropertieRepo.findAllByCategorie(categorieDTO.getCatproperties());
-        categorie.setCatproperties(properties);
+        categorie.setCid(categorieDTO.getCid());
+        //categorie.setKey(categorieDTO.getKey());
+        categorie= categorieRepo.save(categorie);
         categorieRepo.save(categorie);
         return categorie;
+
     }
 
     @Override
-    public Categorie Update(CategorieDTO categorieDTO) {
-        Categorie categorie= new Categorie();
+    public Category Update(CategorieDTO categorieDTO) {
+        Category categorie= new Category();
         categorie.setCat_id(categorieDTO.getCat_id());
+       // categorie.setKey(categorieDTO.getKey());
+        categorie.setCid(categorieDTO.getCid());
         categorie.setName(categorieDTO.getName());
         categorieRepo.save(categorie);
         return categorie;
     }
 
-    @Override
-    public Optional<Categorie> getCat(Long cat_id) {
-        return categorieRepo.findById(cat_id);
+    public Optional<Category> getCat(Long id) {
+        return categorieRepo.findById(id);
     }
 
     @Override
-    public List<Categorie> AllCat() {
+    public List<Category> AllCat() {
         return categorieRepo.findAll();
     }
 
