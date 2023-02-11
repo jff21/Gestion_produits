@@ -1,5 +1,6 @@
 package com.product.product_backend.Services.Impl;
 
+import com.product.product_backend.DTOS.LevelDTO;
 import com.product.product_backend.Models.Level;
 import com.product.product_backend.Repositories.LevelRepo;
 import com.product.product_backend.Services.LevelService;
@@ -16,20 +17,20 @@ public class LevelServiceImpl implements LevelService {
     private final LevelRepo levelRepo;
 
     @Override
-    public Level createLevel() {
+    public Level createLevel(LevelDTO levelDTO) {
         Level level = new Level();
-        level.setDescription(level.getDescription());
-        level.setLevel(level.getLevel());
+        level.setDescription(levelDTO.getDescription());
+        level.setLevel(levelDTO.getLevel());
         levelRepo.save(level);
         return level;
     }
 
     @Override
-    public Level updateLevel() {
+    public Level updateLevel(LevelDTO levelDTO) {
         Level level = new Level();
-        level.setLvl_id(level.getLvl_id());
-        level.setDescription(level.getDescription());
-        level.setLevel(level.getLevel());
+        level.setLvl_id(levelDTO.getLvl_id());
+        level.setDescription(levelDTO.getDescription());
+        level.setLevel(levelDTO.getLevel());
         levelRepo.save(level);
         return level;
     }

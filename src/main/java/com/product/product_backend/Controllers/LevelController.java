@@ -1,5 +1,6 @@
 package com.product.product_backend.Controllers;
 
+import com.product.product_backend.DTOS.LevelDTO;
 import com.product.product_backend.Models.Level;
 import com.product.product_backend.Services.LevelService;
 import lombok.AllArgsConstructor;
@@ -18,13 +19,13 @@ public class LevelController {
     private final LevelService levelService;
 
     @PostMapping("/add")
-    public ResponseEntity<Level> addLevel(){
-        return new ResponseEntity<>(levelService.createLevel(), HttpStatus.CREATED);
+    public ResponseEntity<Level> addLevel(@RequestBody LevelDTO levelDTO){
+        return new ResponseEntity<>(levelService.createLevel(levelDTO), HttpStatus.CREATED);
     }
 
     @PostMapping("/update")
-    public ResponseEntity<Level> update(){
-        return new ResponseEntity<>(levelService.updateLevel(), HttpStatus.CREATED);
+    public ResponseEntity<Level> update(LevelDTO levelDTO){
+        return new ResponseEntity<>(levelService.updateLevel(levelDTO), HttpStatus.CREATED);
     }
 
     @GetMapping("/getLvl")
@@ -37,8 +38,8 @@ public class LevelController {
         return levelService.AllLevels();
     }
 
-    @DeleteMapping("")
-    public void deleteLevel(Long lvl_id){
+    @DeleteMapping("/del/{id}")
+    public void deleteLevel(@PathVariable  Long lvl_id){
         levelService.deleteLevel(lvl_id);
     }
 }
