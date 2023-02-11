@@ -14,10 +14,11 @@ public class ProductDTO {
     private float minimumThreshold;
     private int unitPrice;
     private String reference;
-
+    private String qrCode;
     private Long categorie;
     private Long level;
     private Long unit;
     private Long productline;
     private Long media;
+    private Long iventory;
 }
