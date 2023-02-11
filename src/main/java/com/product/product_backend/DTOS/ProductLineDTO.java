@@ -9,6 +9,6 @@ public class ProductLineDTO {
     private long line_id;
    // private Date deliveryDate;
     private int number;
-    private float quantity;
+    private int quantity;
     private String supplier;
 }

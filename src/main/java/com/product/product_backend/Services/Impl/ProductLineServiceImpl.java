@@ -1,5 +1,6 @@
 package com.product.product_backend.Services.Impl;
 
+import com.product.product_backend.DTOS.ProductLineDTO;
 import com.product.product_backend.Models.Productline;
 import com.product.product_backend.Repositories.ProductLineRepo;
 import com.product.product_backend.Services.ProductUnitService;
@@ -18,22 +19,22 @@ public class ProductLineServiceImpl implements ProductUnitService {
     }
 
     @Override
-    public Productline addLine() {
+    public Productline addLine(ProductLineDTO productLineDTO) {
         Productline productline = new Productline();
-        productline.setNumber(productline.getNumber());
-        productline.setQuantity(productline.getQuantity());
-        productline.setSupplier(productline.getSupplier());
+        productline.setNumber(productLineDTO.getNumber());
+        productline.setQuantity(productLineDTO.getQuantity());
+        productline.setSupplier(productLineDTO.getSupplier());
         productLineRepo.save(productline);
         return productline;
     }
 
     @Override
-    public Productline Update() {
+    public Productline Update(ProductLineDTO productLineDTO) {
         Productline productline = new Productline();
-        productline.setLine_id(productline.getLine_id());
-        productline.setNumber(productline.getNumber());
-        productline.setQuantity(productline.getQuantity());
-        productline.setSupplier(productline.getSupplier());
+        productline.setLine_id(productLineDTO.getLine_id());
+        productline.setNumber(productLineDTO.getNumber());
+        productline.setQuantity(productLineDTO.getQuantity());
+        productline.setSupplier(productLineDTO.getSupplier());
         productLineRepo.save(productline);
         return productline;
     }
