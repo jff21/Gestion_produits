@@ -14,7 +14,7 @@ public class QrCode {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long code;
-    private String code_url;
+    private byte[] code_url;
     @OneToOne
     private Product product;
 }

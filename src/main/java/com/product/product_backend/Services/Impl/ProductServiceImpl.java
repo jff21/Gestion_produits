@@ -23,6 +23,7 @@ public class ProductServiceImpl implements ProductService {
     private final UnitRepo unitRepo;
     private final LevelRepo levelRepo;
     private final ProductLineRepo productLineRepo;
+    private final InventoryRepository inventoryRepository;
 
     @Override
     public Product createProd(ProductDTO productDTO,MultipartFile[] file) {
@@ -38,12 +39,14 @@ public class ProductServiceImpl implements ProductService {
         product.setUnitPrice(productDTO.getUnitPrice());
         Productline productline=productLineRepo.findById(productDTO.getProductline()).orElseThrow(EntityNotFoundException::new);
         product.setProductline(productline);
-        Categorie categorie=categorieRepo.findById(productDTO.getCategorie()).orElseThrow(EntityNotFoundException::new);
+        Category categorie=categorieRepo.findById(productDTO.getCategorie()).orElseThrow(EntityNotFoundException::new);
         product.setCategorie(categorie);
         Unit unit = unitRepo.findById(productDTO.getUnit()).orElseThrow(EntityNotFoundException::new);
         product.setUnit(unit);
         Level level = levelRepo.findById(productDTO.getLevel()).orElseThrow(EntityNotFoundException::new);
         product.setLevel(level);
+        Iventory inv = inventoryRepository.findById(productDTO.getIventory()).orElseThrow(EntityNotFoundException::new);
+        product.setIventory(inv);
         try{
             Set<Media> img= uploadimg(file);
             product.setMedia(img);
@@ -88,6 +91,9 @@ public class ProductServiceImpl implements ProductService {
         if(productDTO.getLevel()!=null){
             product.setLevel(levelRepo.findById(productDTO.getLevel()).orElseThrow(EntityNotFoundException::new));
         }
+        if (productDTO.getIventory()!=null){
+            product.setIventory(inventoryRepository.findById(productDTO.getIventory()).orElseThrow(EntityNotFoundException::new));
+        }
         productRepo.save(product);
         return product;
     }
@@ -112,10 +118,6 @@ public class ProductServiceImpl implements ProductService {
         return productRepo.count();
     }
 
-//    @Override
-//    public List<Product> SearchBySearchContext(SearchContext searchContext, Root<Product> productRoot) {
-//        return productRepo.SearchBySearchcontext(searchContext);
-//    }
 
     @Override
     public List<Product> Search(String mark, String designation, String reference) {
